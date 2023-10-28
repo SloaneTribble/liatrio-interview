@@ -18,11 +18,8 @@ jobs:
     - name: Run Docker image
       run: docker run -d -p 3000:80 endpoint:latest # -d runs image as background process
 
-
-
-  # test:
-  #   runs-on:
-  #     ubuntu-latest
-  #   steps:
-  #     - name: run tests
-  #       uses: liatrio/github-actions/apprentice-action@master
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: run tests
+        uses: liatrio/github-actions/apprentice-action@master
