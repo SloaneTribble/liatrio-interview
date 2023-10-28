@@ -7,9 +7,9 @@ on:
     branches: [ "main" ]
 
 jobs:
-
   build-and-run-docker:
     runs-on: ubuntu-latest
+
     steps:
     - uses: actions/checkout@v3
     - name: Build Docker image
@@ -18,8 +18,9 @@ jobs:
     - name: Run Docker image
       run: docker run -d -p 3000:80 endpoint:latest # -d runs image as background process
 
-  test:
+  build:
     runs-on: ubuntu-latest
+    
     steps:
-      - name: run tests
-        uses: liatrio/github-actions/apprentice-action@master
+    - name: run tests
+      uses: liatrio/github-actions/apprentice-action@master
