@@ -1,7 +1,7 @@
 # Use an official Node.js runtime as the base image
 FROM node:14
 
-# Copy application files to container
+# Copy all files from current directory to container
 COPY . ./
 
 # Install project dependencies

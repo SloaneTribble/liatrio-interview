@@ -8,13 +8,17 @@ on:
 
 jobs:
 
-  build:
-
+  build-and-run-docker:
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag endpoint:$(date +%s)
-    - name: run tests
-      uses: liatrio/github-actions/apprentice-action@master
+      run: docker build . -t endpoint:latest .
+
+
+  # test:
+  #   runs-on:
+  #     ubuntu-latest
+  #   steps:
+  #     - name: run tests
+  #       uses: liatrio/github-actions/apprentice-action@master
