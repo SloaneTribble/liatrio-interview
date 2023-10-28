@@ -16,7 +16,7 @@ jobs:
       run: docker build -t endpoint:latest .
     
     - name: Run Docker image
-      run: docker run -p 3000:80 endpoint:latest
+      run: docker run -d -p 3000:80 endpoint:latest # -d runs image as background process
 
 
 
