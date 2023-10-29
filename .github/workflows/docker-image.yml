@@ -7,7 +7,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build-and-run-docker:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -15,12 +15,29 @@ jobs:
     - name: Build Docker image
       run: docker build -t endpoint:latest .
     
-    - name: Run Docker image
-      run: docker run -d -p 80:80 endpoint:latest # -d runs image as background process
+    - name: Run Docker image with debug log
+      run: |
+        container_id=$(docker run -d -p 80:80 endpoint:latest) 
 
-  build:
-    runs-on: ubuntu-latest
+        # Display network details
+        echo "::group::Docker Network Inspection"
+        docker network inspect bridge
+        echo "::endgroup::"
+
+        # Display running containers
+        echo "::group::Running Containers"
+        docker ps
+        echo "::endgroup::"
     
-    steps:
+        # Extract the port mapping from the container's metadata
+        port_mapping=$(docker port $container_id)
+    
+        # Display the port information in the logs
+        echo "Container is running on port $port_mapping"
+
     - name: run tests
-      uses: SloaneTribble/github-actions/apprentice-action@master
+      uses: liatrio/github-actions/apprentice-action@921d5abcef26851810ca11a97e1418c1c3f95e0b
+
+      
+        
+    
