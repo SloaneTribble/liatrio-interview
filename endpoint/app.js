@@ -4,7 +4,7 @@ const express = require('express');
 const app = express();
 
 // TODO: Update to accommodate github action test?
-const port = 3000; 
+const port = 80; 
 
 const message = "My name is Sloane."
 
