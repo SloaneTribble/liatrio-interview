@@ -13,31 +13,22 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build Docker image
-      run: docker build -t endpoint:latest .
-    
-    - name: Run Docker image with debug log
       run: |
-        container_id=$(docker run -d -p 80:80 endpoint:latest) 
-
-        # Display network details
-        echo "::group::Docker Network Inspection"
-        docker network inspect bridge
-        echo "::endgroup::"
-
-        # Display running containers
-        echo "::group::Running Containers"
-        docker ps
-        echo "::endgroup::"
+        docker build -t endpoint:latest .
     
-        # Extract the port mapping from the container's metadata
-        port_mapping=$(docker port $container_id)
-    
-        # Display the port information in the logs
-        echo "Container is running on port $port_mapping"
+    - name: Run Docker image 
+      run: |
+        docker run -d -p 80:80 endpoint:latest
 
-    - name: run tests
+    - name: Run tests
       uses: liatrio/github-actions/apprentice-action@921d5abcef26851810ca11a97e1418c1c3f95e0b
 
-      
+    - name: Docker login
+      env: 
+        DOCKER_USER: ${{secrets.DOCKER_USERNAME}}
+        DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+      run: |
+        docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+        
         
     
