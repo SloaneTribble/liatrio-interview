@@ -28,5 +28,3 @@ jobs:
             gcloud auth configure-docker us-west1-docker.pkg.dev
             docker build -t us-west1-docker.pkg.dev/$GOOGLE_PROJECT/endpoint/endpoint:latest .
             docker push us-west1-docker.pkg.dev/$GOOGLE_PROJECT/endpoint/endpoint:latest
-
-            us-west1-docker.pkg.dev/endpoint-403704/endpoint
