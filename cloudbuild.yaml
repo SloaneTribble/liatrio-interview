@@ -5,7 +5,7 @@ steps:
       - '-t'
       - 'gcr.io/endpoint-403704/github.com/sloanetribble/liatrio-interview:$COMMIT_SHA'
       - '.'
-  options:
+  - options:
     logging: CLOUD_LOGGING_ONLY
   - name: 'gcr.io/cloud-builders/docker'
     args:
