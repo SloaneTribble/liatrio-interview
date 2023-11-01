@@ -19,5 +19,3 @@ steps:
       - '--platform=managed'
       - '--region=us-west1'
 images: ['gcr.io/cloud-builders/docker']
-options:
-logging: CLOUD_LOGGING_ONLY
