@@ -1,0 +1,21 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'build'
+      - '-t'
+      - 'gcr.io/endpoint-403704/github.com/sloanetribble/liatrio-interview:$COMMIT_SHA'
+      - '.'
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'push'
+      - 'gcr.io/endpoint-403704/github.com/sloanetribble/liatrio-interview:$COMMIT_SHA'
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: gcloud
+    args:
+      - 'run'
+      - 'deploy'
+      - 'endpoint'
+      - '--image=gcr.io/endpoint-403704/github.com/sloanetribble/liatrio-interview:$COMMIT_SHA'
+      - '--platform=managed'
+      - '--region=us-west1'
+images: ['gcr.io/cloud-builders/docker']
