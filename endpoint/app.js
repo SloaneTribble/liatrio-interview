@@ -15,7 +15,8 @@ app.get('/', (req, res) => {
 
   const response = {
     message: message,
-    timestamp: timestamp
+    timestamp: timestamp,
+    test: 'testing auto deploy with Cloud Run'
   }
   res.send(response);
 });
