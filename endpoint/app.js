@@ -18,6 +18,7 @@ app.get('/', (req, res) => {
     timestamp: timestamp
   }
   res.send(response);
+  
 });
 
 // start the server;
