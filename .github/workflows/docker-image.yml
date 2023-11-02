@@ -30,8 +30,11 @@ jobs:
       run: |
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
 
-    - name: Docker push
+    - name: Push to Docker Hub
       run: docker push stribble/apprenticeship-interview:${{ github.sha }}
+
+    
+  
         
         
     

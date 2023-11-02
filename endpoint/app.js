@@ -19,6 +19,7 @@ app.get('/', (req, res) => {
     test: 'testing auto deploy with Cloud Run! One more test.'
   }
   res.send(response);
+  
 });
 
 // start the server;

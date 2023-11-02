@@ -1,0 +1,28 @@
+name: GCloud Deploy
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+
+        - name: code checkout
+          uses: actions/checkout@v3
+
+        - name: install gcloud cli
+          uses: google-github-actions/setup-gcloud@v0
+          with:
+            project_id: ${{ secrets.GOOGLE_PROJECT }}
+            service_account_key: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
+            export_default_credentials: true
+
+        - name: build and push docker image to gcloud
+          env:
+            GOOGLE_PROJECT: ${{ secrets.GOOGLE_PROJECT }}
+          run: |
+            gcloud auth configure-docker us-west1-docker.pkg.dev
+            docker build -t us-west1-docker.pkg.dev/$GOOGLE_PROJECT/endpoint/endpoint:latest .
+            docker push us-west1-docker.pkg.dev/$GOOGLE_PROJECT/endpoint/endpoint:latest
