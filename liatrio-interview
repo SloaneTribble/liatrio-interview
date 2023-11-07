@@ -1,0 +1,22 @@
+<mxfile host="app.diagrams.net" modified="2023-11-07T02:58:30.691Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="n1tpDuSD4HRkVByM57Sn" version="21.7.5" type="device">
+  <diagram name="Page-1" id="sl42YGkR5-sLIXqc_HjU">
+    <mxGraphModel dx="1364" dy="771" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="hJTNL_g3O0XZ4ogObUr4-1" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://cdn.iconscout.com/icon/free/png-256/free-github-169-1174970.png;" vertex="1" parent="1">
+          <mxGeometry x="270" y="60" width="220" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="hJTNL_g3O0XZ4ogObUr4-2" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg;" vertex="1" parent="1">
+          <mxGeometry x="450" y="290" width="236.98" height="145" as="geometry" />
+        </mxCell>
+        <mxCell id="hJTNL_g3O0XZ4ogObUr4-3" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://miro.medium.com/v2/resize:fit:492/0*HdWZ3pZZqXhsWdM1.png;" vertex="1" parent="1">
+          <mxGeometry x="770" y="120" width="309.92" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="hJTNL_g3O0XZ4ogObUr4-5" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://cdn.worldvectorlogo.com/logos/express-109.svg;" vertex="1" parent="1">
+          <mxGeometry x="450" y="450" width="240.69" height="70" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
