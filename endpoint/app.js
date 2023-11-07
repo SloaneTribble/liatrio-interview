@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
   const response = {
     message: message,
     timestamp: timestamp,
-    test: 'Tomato deluxe'
+    test: 'Recent version'
   }
   res.send(response);
 });
