@@ -16,7 +16,7 @@ jobs:
       run: |
         docker build -t stribble/apprenticeship-interview:${{ github.sha }} .
     
-    - name: Run Docker image 
+    - name: Run Docker container from image
       run: |
         docker run -d -p 80:80 stribble/apprenticeship-interview:${{ github.sha }}
 

@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
   const response = {
     message: message,
     timestamp: timestamp,
-    test: 'Here we are!'
+    test: 'Liatrio super busted'
   }
   res.send(response);
 });
