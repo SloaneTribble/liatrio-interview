@@ -5,7 +5,7 @@ const app = express();
 
 const port = 80; 
 
-const message = "My name ain't Sloane."
+const message = "My name is Sloane."
 
 // define a route that returns a message with a timestamp.
 app.get('/', (req, res) => {
